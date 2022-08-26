@@ -32,6 +32,7 @@ body {
 }
 
 .smaller{
+    height: auto;
     max-width: 200px;
     padding-left: 15px;
 }

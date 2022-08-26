@@ -50,7 +50,7 @@ startButton.addEventListener("click", () => {
 })
 
 let ingredients = [
-    {number: "1",image:"./img/kopi.png"},
+    {number: "1",image:"./img/kopiI.png"},
     {number: "2",image:"./img/milk.png"},
     {number: "3",image:"./img/sugar.png"},
     {number: "4",image:"./img/evaporatedMilk.png"},
@@ -60,30 +60,30 @@ let ingredients = [
 let Q1 = [
     {image:"./img/kopi.png"},
     {number: "2",image:"./img/milk.png"},
-    {number: "1",image:"./img/kopi.png"}
+    {number: "1",image:"./img/kopiI.png"}
 ]
 
 let Q2 = [
     {image:"./img/kopiO.png"},
-    {number: "1",image:"./img/kopi.png"},
+    {number: "1",image:"./img/kopiI.png"},
     {number: "3",image:"./img/sugar.png"}
 ]
 
 let Q3 = [
     {image:"./img/kopiGao.png"},
-    {number: "1",image:"./img/kopi.png"},
-    {number: "1",image:"./img/kopi.png"}
+    {number: "1",image:"./img/kopiI.png"},
+    {number: "1",image:"./img/kopiI.png"}
 ]
 
 let Q4 = [
     {image:"./img/kopiC.png"},
     {number: "4",image:"./img/evaporatedMilk.png"},
-    {number: "1",image:"./img/kopi.png"}
+    {number: "1",image:"./img/kopiI.png"}
 ]
 
 let Q5 = [
     {image:"./img/kopiPeng.png"},
-    {number: "1",image:"./img/kopi.png"},
+    {number: "1",image:"./img/kopiI.png"},
     {number: "5",image:"./img/ice.png"}
 ]
 
@@ -323,7 +323,7 @@ function Question(){
     btn2Answer = ingredients[randomwrong2Index].number
     btn3Answer = ingredients[randomwrong3Index].number
 
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 40; i++) {
         if(btn1Answer == btn2Answer || btn1Answer == btn3Answer 
             || btn2Answer == btn3Answer || correctAnswer1 == btn1Answer ||
             correctAnswer1 == btn2Answer || correctAnswer1 == btn3Answer ||
