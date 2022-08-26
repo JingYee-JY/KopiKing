@@ -228,7 +228,7 @@ function Question(){
             final.innerHTML = `
             <div class="top">
                 <img class="logo" src="./img/logo.png">
-                <img class="zone" src="./img/zone1.png">
+                <img class="zone" src="./img/zone3.png">
             </div>
             <div class="top"></div>
             <img class="title" src="./img/title.png">
@@ -241,7 +241,7 @@ function Question(){
             final.innerHTML = `
             <div class="top">
                 <img class="logo" src="./img/logo.png">
-                <img class="zone" src="./img/zone1.png">
+                <img class="zone" src="./img/zone3.png">
             </div>
             <img class="title" src="./img/title.png">
             <img class="end" src="./img/66.png">
@@ -253,7 +253,7 @@ function Question(){
             final.innerHTML = `
             <div class="top">
                 <img class="logo" src="./img/logo.png">
-                <img class="zone" src="./img/zone1.png">
+                <img class="zone" src="./img/zone3.png">
             </div>
             <img class="title" src="./img/title.png">
             <img class="end" src="./img/33.png">
