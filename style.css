@@ -32,9 +32,8 @@ body {
 }
 
 .smaller{
+    width: 50%;
     height: auto;
-    max-width: 200px;
-    padding-left: 15px;
 }
 
 .logo, .zone{
