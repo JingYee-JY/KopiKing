@@ -52,40 +52,41 @@ startButton.addEventListener("click", () => {
 })
 
 let ingredients = [
-    {number: "1",image:"./img/kopiI.png"},
+    {number: "1",image:"./img/blackKopi.png"},
     {number: "2",image:"./img/milk.png"},
     {number: "3",image:"./img/sugar.png"},
     {number: "4",image:"./img/evaporatedMilk.png"},
-    {number: "5",image:"./img/ice.png"}
+    {number: "5",image:"./img/ice.png"},
+    {number: "6",image:"./img/kopiI.png"}
 ]
 
 let Q1 = [
     {image:"./img/kopi.png"},
     {number: "2",image:"./img/milk.png"},
-    {number: "1",image:"./img/kopiI.png"}
+    {number: "1",image:"./img/blackKopi.png"}
 ]
 
 let Q2 = [
     {image:"./img/kopiO.png"},
-    {number: "1",image:"./img/kopiI.png"},
+    {number: "1",image:"./img/blackKopi.png"},
     {number: "3",image:"./img/sugar.png"}
 ]
 
 let Q3 = [
     {image:"./img/kopiGao.png"},
-    {number: "1",image:"./img/kopiI.png"},
-    {number: "1",image:"./img/kopiI.png"}
+    {number: "1",image:"./img/blackKopi.png"},
+    {number: "1",image:"./img/blackKopi.png"}
 ]
 
 let Q4 = [
     {image:"./img/kopiC.png"},
     {number: "4",image:"./img/evaporatedMilk.png"},
-    {number: "1",image:"./img/kopiI.png"}
+    {number: "1",image:"./img/blackKopi.png"}
 ]
 
 let Q5 = [
     {image:"./img/kopiPeng.png"},
-    {number: "1",image:"./img/kopiI.png"},
+    {number: "6",image:"./img/kopiI.png"},
     {number: "5",image:"./img/ice.png"}
 ]
 
