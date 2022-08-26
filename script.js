@@ -353,9 +353,9 @@ answer2.addEventListener("click", () => {
     }
 })
 
-    let randomwrong1Index = Math.floor(Math.random() * 5);
-    let randomwrong2Index = Math.floor(Math.random() * 5);
-    let randomwrong3Index = Math.floor(Math.random() * 5);
+    let randomwrong1Index = Math.floor(Math.random() * 6);
+    let randomwrong2Index = Math.floor(Math.random() * 6);
+    let randomwrong3Index = Math.floor(Math.random() * 6);
 
     correctAnswer1 = newQuestion[1].number
     correctAnswer2 = newQuestion[2].number
@@ -369,9 +369,9 @@ answer2.addEventListener("click", () => {
             correctAnswer1 == btn2Answer || correctAnswer1 == btn3Answer ||
             correctAnswer2 == btn1Answer || correctAnswer2 == btn2Answer || 
             correctAnswer2 == btn3Answer){
-            randomwrong1Index = Math.floor(Math.random() * 5);
-            randomwrong2Index = Math.floor(Math.random() * 5);
-            randomwrong3Index = Math.floor(Math.random() * 5);
+            randomwrong1Index = Math.floor(Math.random() * 6);
+            randomwrong2Index = Math.floor(Math.random() * 6);
+            randomwrong3Index = Math.floor(Math.random() * 6);
             btn1Answer = ingredients[randomwrong1Index].number
             btn2Answer = ingredients[randomwrong2Index].number
             btn3Answer = ingredients[randomwrong3Index].number
