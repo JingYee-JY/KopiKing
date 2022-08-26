@@ -1,0 +1,242 @@
+/*mobile*/
+body {
+    font-family: 'noto';
+    margin: 0;
+    padding: 0;
+    background-color: #F6D5BF;
+}
+
+*{
+    font-family: 'Noto Sans SC', sans-serif;
+}
+
+.start{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+}
+
+.top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 15px;
+}
+
+.bean{
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.smaller{
+    max-width: 200px;
+    padding-left: 15px;
+}
+
+.logo, .zone{
+    max-width: 150px;
+    padding-left: 15px
+}
+
+.game-title{
+    margin-top: auto;
+    
+}
+.title{
+    width: 100%;
+    padding: 5%;
+    box-sizing: border-box;
+}
+button{
+    background-color: transparent;
+    border: 0px;
+    width:100%;
+    padding: 2.5% 5%;
+}
+
+.cover-bottom{
+    margin-top: auto;
+}
+
+.cover-bottom img{
+    width: 100%;
+    height: auto;
+}
+
+/*question*/
+.QuestionNumber{
+    color: white;
+    font-weight: 500;
+    text-align: center;
+    padding: 5px;
+    background-color: #AA784A;
+    width: 60px;
+    margin: 0 auto;
+    border-radius: 30px;
+    -webkit-box-shadow: 0px 15px 0px 0px #734D2B; 
+    box-shadow: 0px 5px 0px 0px #734D2B;
+}
+
+.equation{
+    color: white;
+    font-weight: 500;
+    text-align: center;
+    padding: 20px;
+    background-color: #DEBD9F;
+    width: calc(100% - 150px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2.5% auto;
+    border-radius: 30px;
+}
+
+.sign{
+    width: 15%;
+    padding: 2.5%;
+}
+
+.answer1, .answer2{
+    color: white;
+    padding: 18%;
+    background-color: #DEBD9F;
+    border:  2px dotted black;
+    width: 50%;
+    height: 50%;
+    margin: 2.5% 2.5%;
+    border-radius: 30px;
+}
+
+.question, .instruction {
+    justify-content: center;
+    text-align: center;
+    padding: 15px;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.question p, .instruction p{
+    margin: 0;
+}
+
+img.options{
+    width: 100%;
+}
+
+img.btn{
+    width: 100%;
+}
+
+button.submit, button.playAgain{
+    max-width: 75%;
+    display: flex;
+    margin: 0 auto;
+}
+
+.answer-q{
+    display: grid;
+    grid-template-columns: repeat(3,33%);
+    justify-content: center;
+}
+
+.btn1, .btn2, .btn3{
+    padding: 0% 0%;
+}
+
+.startbtn{
+    max-width: 250px;
+}
+
+.product{
+    margin: 2.5% auto;
+    width: 50%;
+}
+
+.popUp{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    place-items: center;
+    gap: 5vh;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    background-color: rgba(50, 50, 50,0.6);
+}
+.pop{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.next{
+    position: absolute;
+    margin-top: 37vh;
+}
+
+.correct{
+    width: 35vh;
+}
+
+.final{
+    height: 100vh;
+    width: 100%;
+}
+
+.final .end{
+    display: flex;
+    margin: 0 auto;
+    max-width: 60%;
+}
+
+button.playAgain{
+    margin-top: 30px;
+}
+
+button{
+    cursor: pointer;
+}
+
+.hide{
+    display: none;
+    visibility: hidden;
+}
+
+.game .logo, .final .logo{
+    max-width: 100px;
+}
+
+.game .zone, .final .zone {
+    max-width: 60px;
+}
+
+/*desktop*/
+@media screen and (min-width:1200px){
+    .start, .game, .final{
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    button.submit, button.playAgain{
+        max-width: 260px;
+    }
+    .startbtn{
+        max-width: 260px;
+    }
+    .answer-q{
+        display: grid;
+        flex-direction: row;
+        max-width: 360px;
+        margin: 0 auto;
+    }
+    .final .end{
+        max-width: 360px;
+    }
+}
