@@ -23,6 +23,8 @@ let btn3Image;
 let chosenBtn1;
 let chosenBtn2;
 let chosenBtn3;
+let choice1cliked;
+let choice2cliked;
 
 let randomQuestionIndex;
 let correctAnswer1;
@@ -97,6 +99,7 @@ ans1.addEventListener("click", () => {
         answer1.style.backgroundRepeat = "no-repeat"
         choice1 = btn1Answer
         chosenBtn1 = true
+        choice1cliked = 1
     }
     else if(choice2 == null&& chosenBtn1 == false){
         let answer2 = document.querySelector(".answer2");
@@ -106,6 +109,7 @@ ans1.addEventListener("click", () => {
         answer2.style.backgroundRepeat = "no-repeat"
         choice2 = btn1Answer
         chosenBtn1 = true
+        choice2cliked = 1
     }
     else{
         return
@@ -122,6 +126,7 @@ ans2.addEventListener("click", () => {
         answer1.style.backgroundRepeat = "no-repeat"
         choice1 = btn2Answer
         chosenBtn2 = true
+        choice1cliked = 2
     }
     else if(choice2 == null && chosenBtn2 == false){
         let answer2 = document.querySelector(".answer2");
@@ -131,6 +136,7 @@ ans2.addEventListener("click", () => {
         answer2.style.backgroundRepeat = "no-repeat"
         choice2 = btn2Answer
         chosenBtn2 = true
+        choice2cliked = 2
     }
     else{
         return
@@ -146,6 +152,7 @@ ans3.addEventListener("click", () => {
         answer1.style.backgroundRepeat = "no-repeat"
         choice1 = btn3Answer
         chosenBtn3 = true
+        choice1cliked = 3
     }
     else if(choice2 == null && chosenBtn3 == false){
         let answer2 = document.querySelector(".answer2");
@@ -155,6 +162,7 @@ ans3.addEventListener("click", () => {
         answer2.style.backgroundRepeat = "no-repeat"
         choice2 = btn3Answer
         chosenBtn3 = true
+        choice1cliked = 2
     }
     else{
         return
@@ -308,11 +316,42 @@ function Question(){
     question.innerHTML = `
     <img class="product" src="${newQuestion[0].image}">
     <div class="equation">
-        <div class="answer1"></div>
+        <button class="answer1"></button>
         <img class="sign" src="./img/plus.png">
-        <div class="answer2"></div>
+        <button class="answer2"></button>
     </div>`
-    
+
+    let answer1 = document.querySelector(".answer1")
+    let answer2 = document.querySelector(".answer2")
+
+    answer1.addEventListener("click", () => {
+        choice1 = null;
+        answer1.style.backgroundImage = "none"
+        if(choice1cliked = 1){
+            chosenBtn1 = false
+        }
+        if(choice1cliked = 2){
+            chosenBtn2 = false
+        }
+        if(choice1cliked = 3){
+            chosenBtn2 = false
+        }
+})
+
+answer2.addEventListener("click", () => {
+    choice2 = null;
+    answer2.style.backgroundImage = "none"
+    if(choice1cliked = 1){
+        chosenBtn1 = false
+    }
+    if(choice1cliked = 2){
+        chosenBtn2 = false
+    }
+    if(choice1cliked = 3){
+        chosenBtn3 = false
+    }
+})
+
     let randomwrong1Index = Math.floor(Math.random() * 5);
     let randomwrong2Index = Math.floor(Math.random() * 5);
     let randomwrong3Index = Math.floor(Math.random() * 5);
@@ -345,10 +384,6 @@ function Question(){
     btn1Image = ingredients[randomwrong1Index].image
     btn2Image = ingredients[randomwrong2Index].image
     btn3Image = ingredients[randomwrong3Index].image
-
-    console.log("O"+ btn1Answer)
-    console.log("O"+ btn2Answer)
-    console.log("O"+ btn3Answer)
     
     overwrite = 0;
 
@@ -383,9 +418,6 @@ function Question(){
         }  
         
     }
-    console.log("N"+ btn1Answer)
-    console.log("N"+ btn2Answer)
-    console.log("N"+ btn3Answer)
 }
 
 
