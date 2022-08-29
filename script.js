@@ -60,6 +60,15 @@ let ingredients = [
     {number: "6",image:"./img/kopiI.png"}
 ]
 
+let selectedIngredients = [
+    {number: "1",image:"./img/selectedBK.png"},
+    {number: "2",image:"./img/selectedM.png"},
+    {number: "3",image:"./img/selectedS.png"},
+    {number: "4",image:"./img/selectedEM.png"},
+    {number: "5",image:"./img/selectedI.png"},
+    {number: "6",image:"./img/selectedKI.png"}
+]
+
 let Q1 = [
     {image:"./img/kopi.png"},
     {number: "2",image:"./img/milk.png"},
@@ -203,18 +212,12 @@ submit.addEventListener("click", () => {
         score += 1;
         popUp.classList.remove("hide")
         pop.innerHTML = `
-        <img class="correct" src="./img/correct.png">
-            <button class="next">
-                <img class="nextbtn" src="./img/next.png">
-            </button>`
+        <img class="next" src="./img/correct.png">`
     }
     else{
         popUp.classList.remove("hide")
         pop.innerHTML = `
-        <img class="correct" src="./img/keepItUp.png">
-            <button class="next">
-                <img class="nextbtn" src="./img/next.png">
-            </button>`
+        <img class="next" src="./img/keepItUp.png">`
     }
     let next = document.querySelector(".next")
     next.addEventListener("click", () => {
@@ -382,9 +385,9 @@ answer2.addEventListener("click", () => {
     ans2.innerHTML = `<img class="options" src="${ingredients[randomwrong2Index].image}">`
     ans3.innerHTML = `<img class="options" src="${ingredients[randomwrong3Index].image}">`
 
-    btn1Image = ingredients[randomwrong1Index].image
-    btn2Image = ingredients[randomwrong2Index].image
-    btn3Image = ingredients[randomwrong3Index].image
+    btn1Image = selectedIngredients[randomwrong1Index].image
+    btn2Image = selectedIngredients[randomwrong2Index].image
+    btn3Image = selectedIngredients[randomwrong3Index].image
     
     overwrite = 0;
 
@@ -396,26 +399,39 @@ answer2.addEventListener("click", () => {
                 correctAnswerIndex = Math.floor(Math.random() * 3)+1;
             }
         }
+        let correctAnswer = newQuestion[i].number
         let correctAnswerId = "btn" + correctAnswerIndex;
         document.getElementById(correctAnswerId).innerHTML = `<img class="options" src="${newQuestion[i].image}"/>`
 
         if(correctAnswerIndex == 1){
             overwrite = 1;
             btn1Answer = newQuestion[i].number
-            btn1Image = newQuestion[i].image
-            console.log("C"+btn1Answer)
+            for (let c = 0; c < 6; c++) {
+                checkImage = c + 1
+                if(correctAnswer == checkImage){
+                    btn1Image = selectedIngredients[c].image
+                }
+            }
         }
         if(correctAnswerIndex == 2){
             overwrite = 2;
             btn2Answer = newQuestion[i].number
-            btn2Image = newQuestion[i].image
-            console.log("C"+btn2Answer)
+            for (let c = 0; c < 6; c++) {
+                checkImage = c + 1
+                if(correctAnswer == checkImage){
+                    btn2Image = selectedIngredients[c].image
+                }
+            }
         }
         if(correctAnswerIndex == 3){
             overwrite = 3;
             btn3Answer = newQuestion[i].number
-            btn3Image = newQuestion[i].image
-            console.log("C"+btn3Answer)
+            for (let c = 0; c < 6; c++) {
+                checkImage = c + 1
+                if(correctAnswer == checkImage){
+                    btn3Image = selectedIngredients[c].image
+                }
+            }
         }  
         
     }
