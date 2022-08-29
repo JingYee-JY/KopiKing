@@ -223,9 +223,9 @@ submit.addEventListener("click", () => {
         <p style="z-index: 1;">正确答案是</p>
         <p style="z-index: 1;">The correct answer is</p>
         <div class="right" style="z-index: 1;" >
-        <img src="${correctImg1}">
-        <img src="./img/plus.png">
-        <img src="${correctImg2}">
+            <img src="${correctImg1}">
+            <img class="resize" src="./img/plus.png">
+            <img src="${correctImg2}">
         </div>`
     }
     let next = document.querySelector(".next")
@@ -327,7 +327,7 @@ function Question(){
     }
     question.innerHTML = `
     <img class="product" src="${newQuestion[0].image}">
-    <div class="coffee-content">是由以下两个食材组成的<br>is form by the two ingredients below</div>
+    <div class="coffee-content">点击答案放入上面的框中<br>Tap the answers into the boxes above is formed by which 2 ingredients below?</div>
     <div class="equation">
         <button class="answer1"></button>
         <img class="sign" src="./img/plus.png">

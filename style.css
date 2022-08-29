@@ -201,14 +201,23 @@ button.submit, button.playAgain{
 
 .right{
     display: flex;
-    width: 70%;
     margin-top: 20px;
     justify-content: center;
-    max-width: 350px;
+    align-items: center;
+    max-width: 500px;
 }
 
 .right img{
-    width: 30%;
+    width: 20%;
+    height: auto;
+}
+.resize{
+    padding: 5px;
+    width: 10% !important;
+}
+
+.plus{
+    width: 25%;
 }
 
 .next{
