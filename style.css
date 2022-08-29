@@ -15,13 +15,15 @@ body {
     display: flex;
     flex-direction: column;
     height: auto;
+    position: relative;
 }
 
 .top{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 15px;
+    padding-top: 20px;
+    margin-bottom: 30px;
 }
 
 .bean{
@@ -29,6 +31,9 @@ body {
     justify-content: flex-end;
     padding-top: 15px;
     padding-bottom: 15px;
+    z-index: -1;
+    position: absolute;
+    bottom: 10%;
 }
 
 .smaller{
@@ -38,17 +43,18 @@ body {
 
 .logo, .zone{
     max-width: 150px;
-    padding-left: 15px
+    padding-left: 20px
 }
 
 .game-title{
-    margin-top: auto;
+    margin-bottom: 30px;
     
 }
 .title{
-    width: 100%;
-    padding: 5%;
-    box-sizing: border-box;
+    display: flex;
+    margin: 0 auto;
+    max-width: 60%;
+    padding: 0;
 }
 button{
     background-color: transparent;
@@ -58,7 +64,7 @@ button{
 }
 
 .cover-bottom{
-    margin-top: auto;
+    margin-top: 45px;
 }
 
 .cover-bottom img{
@@ -86,7 +92,7 @@ button{
     text-align: center;
     padding: 20px;
     background-color: #DEBD9F;
-    width: calc(100% - 150px);
+    width: calc(100% - 40px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -104,8 +110,6 @@ button{
     padding: 18%;
     background-color: #DEBD9F;
     border:  2px dotted black;
-    width: 50%;
-    height: 50%;
     margin: 2.5% 2.5%;
     border-radius: 15px;
 }
@@ -118,6 +122,13 @@ button{
     font-weight: 500;
 }
 
+.instruction{
+    padding-top:0px;
+}
+
+.question{
+    padding-bottom: 0px;
+}
 .question p, .instruction p{
     margin: 0;
 }
@@ -140,6 +151,7 @@ button.submit, button.playAgain{
     display: grid;
     grid-template-columns: repeat(3,33%);
     justify-content: center;
+    padding: 0 20px;
 }
 
 .btn1, .btn2, .btn3{
@@ -152,7 +164,11 @@ button.submit, button.playAgain{
 
 .product{
     margin: 2.5% auto;
-    width: 50%;
+    width: 40%;
+}
+.close{
+    width: 10%;
+    height: auto;
 }
 
 .popUp{
@@ -173,20 +189,39 @@ button.submit, button.playAgain{
     height: 100%;
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+
+.pop p{
+    margin: 0;
+}
+
+.right{
+    display: flex;
+    width: 70%;
+    margin-top: 20px;
+    justify-content: center;
+    max-width: 350px;
+}
+
+.right img{
+    width: 30%;
 }
 
 .next{
     position: absolute;
     display: flex;
     justify-content: center;
-    margin-top: 35vh;
+    margin-top: 0;
+    max-width: 85%;
 }
 
-.nextbtn{
-    max-width: 180px;
-    width: 50%;
+.next{
+    width: 80%;
+    max-width: 400px;
 }
 
 .correct{
@@ -222,9 +257,13 @@ button{
 }
 
 .game .zone, .final .zone {
-    max-width: 60px;
+    max-width: 120px;
 }
-
+@media screen and (max-width:767px){
+    .product{
+        width: 50%;
+    }
+}
 /*ipad*/
 @media screen and (min-width: 768px) and (max-width: 1199px){
     .logo{
@@ -245,6 +284,9 @@ button{
     }
     .final .end{
         max-width: 450px;
+    }
+    .right{
+        max-width: 40%;
     }
 }
 
@@ -269,8 +311,11 @@ button{
     .final .end{
         max-width: 360px;
     }
-    .nextbtn{
-        max-width: 150px;
-        width: 30%;
+    .next{
+        max-width: 250px;
+        width: 50%;
+    }
+    .right{
+        max-width: 20%;
     }
 }
