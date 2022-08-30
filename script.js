@@ -70,31 +70,31 @@ let selectedIngredients = [
 ]
 
 let Q1 = [
-    {image:"./img/kopi.png"},
+    {Ename:"Kopi", Cname:"咖啡", image:"./img/kopi.png"},
     {number: "2",image:"./img/milk.png"},
     {number: "1",image:"./img/blackKopi.png"}
 ]
 
 let Q2 = [
-    {image:"./img/kopiO.png"},
+    {Ename:"Kopi O", Cname:"咖啡乌", image:"./img/kopiO.png"},
     {number: "1",image:"./img/blackKopi.png"},
     {number: "3",image:"./img/sugar.png"}
 ]
 
 let Q3 = [
-    {image:"./img/kopiGao.png"},
+    {Ename:"Kopi Gao", Cname:"咖啡厚", image:"./img/kopiGao.png"},
     {number: "1",image:"./img/blackKopi.png"},
     {number: "1",image:"./img/blackKopi.png"}
 ]
 
 let Q4 = [
-    {image:"./img/kopiC.png"},
+    {Ename:"Kopi C", Cname:"咖啡加淡奶", image:"./img/kopiC.png"},
     {number: "4",image:"./img/evaporatedMilk.png"},
     {number: "1",image:"./img/blackKopi.png"}
 ]
 
 let Q5 = [
-    {image:"./img/kopiPeng.png"},
+    {Ename:"Kopi Peng", Cname:"咖啡冰", image:"./img/kopiPeng.png"},
     {number: "6",image:"./img/kopiI.png"},
     {number: "5",image:"./img/ice.png"}
 ]
@@ -223,9 +223,9 @@ submit.addEventListener("click", () => {
         <p style="z-index: 1;">正确答案是</p>
         <p style="z-index: 1;">The correct answer is</p>
         <div class="right" style="z-index: 1;" >
-        <img src="${correctImg1}">
-        <img src="./img/plus.png">
-        <img src="${correctImg2}">
+            <img src="${correctImg1}">
+            <img class="resize" src="./img/plus.png">
+            <img src="${correctImg2}">
         </div>`
     }
     let next = document.querySelector(".next")
@@ -327,7 +327,7 @@ function Question(){
     }
     question.innerHTML = `
     <img class="product" src="${newQuestion[0].image}">
-    <div class="coffee-content">是由以下两个食材组成的<br>is form by the two ingredients below</div>
+    <div class="coffee-content">${newQuestion[0].Cname}是由以下哪两个材料组成？<br>${newQuestion[0].Ename} is formed by which 2 ingredients below?</div>
     <div class="equation">
         <button class="answer1"></button>
         <img class="sign" src="./img/plus.png">
