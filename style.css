@@ -205,6 +205,8 @@ button.submit, button.playAgain{
     justify-content: center;
     max-width: 500px;
     align-items: center;
+    align-items: center;
+    max-width: 500px;
 }
 
 .right img{
@@ -214,6 +216,7 @@ button.submit, button.playAgain{
 .resize{
     padding: 5px;
     width: 10%!important;
+    width: 10% !important;
 }
 
 .plus{
