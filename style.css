@@ -3,7 +3,11 @@ body {
     font-family: 'noto';
     margin: 0;
     padding: 0;
+    width: 100%;
+    height: 100%;
     background-color: #F6D5BF;
+    position: fixed;
+    overflow: hidden;
 }
 
 *{
@@ -24,6 +28,68 @@ body {
     justify-content: space-between;
     padding-top: 20px;
     margin-bottom: 30px;
+}
+.game .top, .final .top{
+    padding-top: 10px;
+    margin-bottom:  10px;
+}
+
+.container{
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.product{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.ingredients{
+    background-color: white;
+    border-radius: 10px;
+    width: 100%;
+    padding: 10px;
+}
+
+.coffee{
+    margin: 0% auto;
+    width: 70%;
+}
+
+.left{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.right{
+    width: 100%;
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .coffee-content{
+    margin-bottom: 0px;
+    font-size: 15px;
+}
+
+.coffee-content{
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.name{
+    margin: 0px;
+    font-size: 15px;
+}
+
+.in{
+    width: 35%;
 }
 
 .bean{
@@ -55,6 +121,9 @@ body {
     margin: 0 auto;
     max-width: 60%;
     padding: 0;
+}
+.final .title{
+    width: 40%;
 }
 button{
     background-color: transparent;
@@ -141,21 +210,40 @@ img.btn{
     width: 100%;
 }
 
-button.submit, button.playAgain{
+button.submit, button.playAgain, button.nextZone{
     max-width: 75%;
     display: flex;
     margin: 0 auto;
+    justify-content: center;
 }
 
 .answer-q{
     display: grid;
-    grid-template-columns: repeat(3,33%);
+    grid-template-columns: repeat(3,30%);
     justify-content: center;
-    padding: 0 20px;
+    justify-items: center;
+    gap: 10px;
+    margin: 0 20px;
 }
 
-.btn1, .btn2, .btn3{
-    padding: 0% 0%;
+.tap-answer{
+	margin: 20px;
+	padding:20px 0px;
+	background-color: rgba(255,255,255,0.6);
+	border-radius: 32px;
+}
+
+#btn1, #btn2, #btn3, #btn4, #btn5, #btn6{
+    max-width: 90%;
+    cursor: pointer;
+    box-sizing: border-box;
+    padding: 2.5%;
+    background-color: white;
+    border-radius: 10px;
+    border: transparent;
+}
+#btn1 img , #btn2 img, #btn3 img, #btn4 img, #btn5 img, #btn6 img{
+    max-width: 100%;
 }
 
 .startbtn{
@@ -163,7 +251,6 @@ button.submit, button.playAgain{
 }
 
 .product{
-    margin: 2.5% auto;
     width: 40%;
 }
 .close{
@@ -186,8 +273,9 @@ button.submit, button.playAgain{
 }
 .pop{
     position: relative;
-    height: 100%;
-    width: 100%;
+    width: 80%;
+    height: auto;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -199,24 +287,13 @@ button.submit, button.playAgain{
     margin: 0;
 }
 
-.right{
-    display: flex;
-    margin-top: 20px;
-    justify-content: center;
-    max-width: 500px;
-    align-items: center;
-    align-items: center;
-    max-width: 500px;
-}
-
 .right img{
-    width: 20%;
+    width: 23%;
     height: auto;
 }
 .resize{
     padding: 5px;
     width: 10%!important;
-    width: 10% !important;
 }
 
 .plus{
@@ -228,12 +305,8 @@ button.submit, button.playAgain{
     display: flex;
     justify-content: center;
     margin-top: 0;
-    max-width: 85%;
-}
-
-.next{
-    width: 80%;
-    max-width: 400px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .correct{
@@ -252,7 +325,7 @@ button.submit, button.playAgain{
 }
 
 button.playAgain{
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 button{
@@ -278,47 +351,66 @@ button{
 }
 /*ipad*/
 @media screen and (min-width: 768px) and (max-width: 1199px){
-    .logo{
+    .logo, .zone{
         max-width: 250px;
     }
-    .title{
-    padding: 5% 15%;
+    .QuestionNumber{
+        width: 120px; 
+        box-shadow: 0px 10px 0px 0px #734D2B;
+        font-size: 35px;
+        margin-bottom: 10px;
     }
     .question{
-        font-size: 32px;
-    }
-    .answer-q{
-        max-width: 500px;
+        max-width: 700px;
         margin: 0 auto;
     }
-    button.submit, button.playAgain{
+    .answer-q{
+        max-width: 700px;
+        margin: 0 auto;
+    }
+    .coffee-content, .name{
+        font-size: 30px;
+    }
+    button.submit, button.playAgain, button.nextZone,.startbtn{
         max-width: 450px;
     }
     .final .end{
         max-width: 450px;
     }
     .right{
-        max-width: 40%;
+        width: 100%;
+    }
+    .pop{
+        width: 70%;
+    }
+    .pop p{
+        font-size: 40px;
     }
 }
 
 /*desktop*/
 @media screen and (min-width:1200px){
     .start, .game, .final{
-        max-width: 500px;
+        max-width: 400px;
         margin: 0 auto;
     }
-    button.submit, button.playAgain{
-        max-width: 260px;
+    .startbtn,button.submit, button.playAgain, button.nextZone{
+        max-width: 200px;
     }
-    .startbtn{
-        max-width: 260px;
+    .cover-bottom{
+        margin-top: 15px;
+    }
+    .cover-bottom img{
+        width: 90%;
     }
     .answer-q{
         display: grid;
         flex-direction: row;
-        max-width: 360px;
+        max-width: 300px;
         margin: 0 auto;
+    }
+    .in{
+        width: 25%;
     }
     .final .end{
         max-width: 360px;
@@ -328,6 +420,6 @@ button{
         width: 50%;
     }
     .right{
-        max-width: 20%;
+        max-width: 30%;
     }
 }

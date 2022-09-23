@@ -5,6 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="./img/favicon.png">
+	<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M2PSKBL');</script>
+<!-- End Google Tag Manager -->
+	<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8FER2CGVSH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8FER2CGVSH');
+</script>
     <title>Kopi King</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,15 +28,16 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+	<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M2PSKBL"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
     <div class="start">
         <div class="top">
             <img class="logo" src="./img/logo.png">
             <img class="zone" src="./img/zone3.png">
         </div>
         <!--added game-title-->
-        <div class="bean">
-            <img class="smaller" src="./img/beans.png">
-        </div>
         <div class="game-title">
             <img class="title" src="./img/title.png">
         </div>
@@ -36,33 +53,50 @@
             <img class="logo" src="./img/logo.png">
             <img class="zone" src="./img/zone3.png">
         </div>
-        <!-- <div class="instruction">
-            <p>咖啡的种类</p>
-            <p>Type of ‘Kopi’ </p>
-        </div> -->
-            <div class="QuestionNumber">
-                0/0
-            </div>
-            <div class="question"></div>
-            <div class="instruction">
-                <p>点击答案放入上面的框中</p>
-                <p>Tap the answers into the boxes above</p>
-            </div>
-            <!--added answer-q-->
-            <div class="answer-q">
-            <button id="btn1">
-            </button>
-            <button id="btn2">
-            </button>
-            <button id="btn3">
-            </button>
+        <div class="QuestionNumber">
+            0/0
         </div>
-            <button class="submit">
-                <img class="btn" src="./img/submit.png">
+        <div class="question"></div>
+        <div class="answer-q">
+            <button id="btn1" data="1">
+                <img src="./img/blackKopi.png">
+            </button>
+            <button id="btn2" data="6">
+                <img src="./img/kopiI.png">
+            </button>
+            <button id="btn3" data="3">
+                <img src="./img/sugar.png">
+            </button>
+            <button id="btn4" data="5">
+                <img src="./img/ice.png">
+            </button>
+            <button id="btn5" data="2">
+                <img src="./img/milk.png">
+            </button>
+            <button id="btn6" data="4">
+                <img src="./img/evaporatedMilk.png">
             </button>
     </div>
-    <div class="final hide"></div>
+    <button class="submit">
+        <img class="startbtn" src="./img/submit.png">
+    </button>
+</div>
+    <div class="final hide">
+        <div class="top">
+            <img class="logo" src="./img/logo.png">
+            <img class="zone" src="./img/zone3.png">
+        </div>
+        <img class="title" src="./img/title.png">
+        <img class="end" src="./img/100.png">
+        <button class="playAgain">
+            <img class="btn" src="./img/playAgain.png">
+        </button>
+        <button class="nextZone" onclick="window.location.href='https://gimme.sg/activations/SCCC/zone4/game1/';">
+            <img class="btn" src="./img/nextGame.png">
+        </button>
+    </div>
     <div class="popUp hide">
+        <div class="pop"></div>
     </div>
     <script src="script.js"></script>
 </body>

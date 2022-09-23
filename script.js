@@ -10,6 +10,7 @@ const popUp = document.querySelector(".popUp");
 const pop = document.querySelector(".pop");
 const submit = document.querySelector(".submit");
 const final = document.querySelector(".final");
+const end = document.querySelector(".end");
 
 let current;
 let totalQuestion = 3;
@@ -43,8 +44,8 @@ startButton.addEventListener("click", () => {
     current = 0;
     totalQuestion = 3;
     score = 0;
-    choice1 = null;
-    choice2 = null;
+    choice1 = 0;
+    choice2 = 0;
     chosenBtn1 = false;
     chosenBtn2 = false;
     chosenBtn3 = false;
@@ -58,15 +59,6 @@ let ingredients = [
     {number: "4",image:"./img/evaporatedMilk.png"},
     {number: "5",image:"./img/ice.png"},
     {number: "6",image:"./img/kopiI.png"}
-]
-
-let selectedIngredients = [
-    {number: "1",image:"./img/selectedBK.png"},
-    {number: "2",image:"./img/selectedM.png"},
-    {number: "3",image:"./img/selectedS.png"},
-    {number: "4",image:"./img/selectedEM.png"},
-    {number: "5",image:"./img/selectedI.png"},
-    {number: "6",image:"./img/selectedKI.png"}
 ]
 
 let Q1 = [
@@ -84,7 +76,7 @@ let Q2 = [
 let Q3 = [
     {Ename:"Kopi Gao", Cname:"咖啡厚", image:"./img/kopiGao.png"},
     {number: "1",image:"./img/blackKopi.png"},
-    {number: "1",image:"./img/blackKopi.png"}
+    {number: "6",image:"./img/kopiI.png"}
 ]
 
 let Q4 = [
@@ -99,92 +91,53 @@ let Q5 = [
     {number: "5",image:"./img/ice.png"}
 ]
 
-ans1.addEventListener("click", () => {
-    if(choice1 == null && chosenBtn1 == false){
-        let answer1 = document.querySelector(".answer1");
-        console.log(btn1Image)
-        answer1.style.backgroundImage = "url('" + btn1Image + "')"
-        answer1.style.backgroundSize = "contain"
-        answer1.style.backgroundPosition = "center center"
-        answer1.style.backgroundRepeat = "no-repeat"
-        choice1 = btn1Answer
-        chosenBtn1 = true
-        choice1cliked = 1
-    }
-    else if(choice2 == null&& chosenBtn1 == false){
-        let answer2 = document.querySelector(".answer2");
-        answer2.style.backgroundImage = "url('" + btn1Image + "')"
-        answer2.style.backgroundSize = "contain"
-        answer2.style.backgroundPosition = "center center"
-        answer2.style.backgroundRepeat = "no-repeat"
-        choice2 = btn1Answer
-        chosenBtn1 = true
-        choice2cliked = 1
-    }
-    else{
-        return
-    }
-})
+input()
 
-ans2.addEventListener("click", () => {
-    if(choice1 == null && chosenBtn2 == false){
-        let answer1 = document.querySelector(".answer1");
-        console.log(btn1Image)
-        answer1.style.backgroundImage = "url('" + btn2Image + "')"
-        answer1.style.backgroundSize = "contain"
-        answer1.style.backgroundPosition = "center center"
-        answer1.style.backgroundRepeat = "no-repeat"
-        choice1 = btn2Answer
-        chosenBtn2 = true
-        choice1cliked = 2
-    }
-    else if(choice2 == null && chosenBtn2 == false){
-        let answer2 = document.querySelector(".answer2");
-        answer2.style.backgroundImage = "url('" + btn2Image + "')"
-        answer2.style.backgroundSize = "contain"
-        answer2.style.backgroundPosition = "center center"
-        answer2.style.backgroundRepeat = "no-repeat"
-        choice2 = btn2Answer
-        chosenBtn2 = true
-        choice2cliked = 2
-    }
-    else{
-        return
-    }
-})
+function input(){
+    for (let i = 0; i < 6; i ++){
+        let currentClass = "btn" + (i + 1)
 
-ans3.addEventListener("click", () => {
-    if(choice1 == null && chosenBtn3 == false){
-        let answer1 = document.querySelector(".answer1");
-        answer1.style.backgroundImage = "url('" + btn3Image + "')"
-        answer1.style.backgroundSize = "contain"
-        answer1.style.backgroundPosition = "center center"
-        answer1.style.backgroundRepeat = "no-repeat"
-        choice1 = btn3Answer
-        chosenBtn3 = true
-        choice1cliked = 3
+        let currentBtn = document.getElementById(currentClass)
+        
+        currentBtn.addEventListener("click", () => {
+            let data = currentBtn.getAttribute("data")
+            if(choice1 == data){
+                currentBtn.style.border = "transparent"
+                choice1 = 0
+                console.log("r1")
+                return
+            }
+            if(choice2 == data){
+                currentBtn.style.border = "transparent"
+                choice2 = 0
+                console.log("r2")
+                return
+            }
+            if(choice1 == 0){
+                currentBtn.style.border = "5px solid black"
+                choice1 = data
+                console.log(choice1)
+            }
+            else if(choice2 == 0){
+                currentBtn.style.border = "5px solid black"
+                choice2 = data
+                console.log(choice2)
+            }
+            else{
+                return
+            }
+        })
     }
-    else if(choice2 == null && chosenBtn3 == false){
-        let answer2 = document.querySelector(".answer2");
-        answer2.style.backgroundImage = "url('" + btn3Image + "')"
-        answer2.style.backgroundSize = "contain"
-        answer2.style.backgroundPosition = "center center"
-        answer2.style.backgroundRepeat = "no-repeat"
-        choice2 = btn3Answer
-        chosenBtn3 = true
-        choice1cliked = 2
-    }
-    else{
-        return
-    }
-})
+}
 
 submit.addEventListener("click", () => {
-    if(choice1 == null || choice2 == null){
+    if(choice1 == 0 || choice2 == 0){
         return
     }
     choosenAnswer1 = false
     choosenAnswer2 = false
+    console.log(correctAnswer1)
+    console.log(correctAnswer2)
     if(choice1 == correctAnswer1 && choosenAnswer1 == false){
         console.log("r1")
         choice1 = 0
@@ -230,8 +183,8 @@ submit.addEventListener("click", () => {
     }
     let next = document.querySelector(".next")
     next.addEventListener("click", () => {
-        choice1 = null;
-        choice2 = null;
+        choice1 = 0;
+        choice2 = 0;
         chosenBtn1 = false;
         chosenBtn2 = false;
         chosenBtn3 = false;
@@ -246,49 +199,16 @@ function Question(){
         game.classList.add('hide')
         final.classList.remove("hide")
         if(score == totalQuestion){
-            final.innerHTML = `
-            <div class="top">
-                <img class="logo" src="./img/logo.png">
-                <img class="zone" src="./img/zone3.png">
-            </div>
-            <img class="title" src="./img/title.png">
-            <img class="end" src="./img/100.png">
-            <button class="playAgain">
-                <img class="btn" src="./img/playAgain.png">
-            </button>`
+            end.src="./img/100.png"
         }
         else if(score == 2){
-            final.innerHTML = `
-            <div class="top">
-                <img class="logo" src="./img/logo.png">
-                <img class="zone" src="./img/zone3.png">
-            </div>
-            <img class="title" src="./img/title.png">
-            <img class="end" src="./img/66.png">
-            <button class="playAgain">
-            <img class="btn" src="./img/playAgain.png">
-            </button>`
+            end.src="./img/66.png"
         }
         else if(score == 1){
-            final.innerHTML = `
-            <div class="top">
-                <img class="logo" src="./img/logo.png">
-                <img class="zone" src="./img/zone3.png">
-            </div>
-            <img class="title" src="./img/title.png">
-            <img class="end" src="./img/33.png">
-            <button class="playAgain">
-                <img class="btn" src="./img/playAgain.png">
-            </button>`
+            end.src="./img/33.png"
         }
         else if(score == 0){
-            final.innerHTML = `
-            <div class="top"></div>
-            <img class="title" src="./img/title.png">
-            <img class="end" src="./img/0.png">
-            <button class="playAgain">
-                <img class="btn" src="./img/playAgain.png">
-            </button>`
+            end.src="./img/0.png"
         }
         let playAgain = document.querySelector(".playAgain")
         playAgain.addEventListener("click", () => {
@@ -326,125 +246,30 @@ function Question(){
         newQuestion = Q5
     }
     question.innerHTML = `
-    <img class="product" src="${newQuestion[0].image}">
-    <div class="coffee-content">${newQuestion[0].Cname}是由以下哪两个材料组成？<br>${newQuestion[0].Ename} is formed by which 2 ingredients below?</div>
-    <div class="equation">
-        <button class="answer1"></button>
-        <img class="sign" src="./img/plus.png">
-        <button class="answer2"></button>
-    </div>`
-
-    let answer1 = document.querySelector(".answer1")
-    let answer2 = document.querySelector(".answer2")
-
-    answer1.addEventListener("click", () => {
-        choice1 = null;
-        answer1.style.backgroundImage = "none"
-        if(choice1cliked = 1){
-            chosenBtn1 = false
-        }
-        if(choice1cliked = 2){
-            chosenBtn2 = false
-        }
-        if(choice1cliked = 3){
-            chosenBtn2 = false
-        }
-})
-
-answer2.addEventListener("click", () => {
-    choice2 = null;
-    answer2.style.backgroundImage = "none"
-    if(choice1cliked = 1){
-        chosenBtn1 = false
-    }
-    if(choice1cliked = 2){
-        chosenBtn2 = false
-    }
-    if(choice1cliked = 3){
-        chosenBtn3 = false
-    }
-})
-
-    let randomwrong1Index = Math.floor(Math.random() * 6);
-    let randomwrong2Index = Math.floor(Math.random() * 6);
-    let randomwrong3Index = Math.floor(Math.random() * 6);
+    <div class="container">
+            <div class="product">
+                <img class="coffee" src="${newQuestion[0].image}">
+                <div class="name">${newQuestion[0].Cname}</div>
+                <div class="name">${newQuestion[0].Ename}</div>
+            </div>
+            <div class="ingredients">
+                <div class="coffee-content"> Ingredients:</div>
+                <img class="in" src="${newQuestion[1].image}">
+                <img class="in" src="${newQuestion[2].image}">
+            </div>
+        </div>
+    <div class="coffee-content">${newQuestion[0].Cname}是由以下哪两个材料组成？<br>${newQuestion[0].Ename} is formed by which 2 ingredients below?</div>`
 
     correctAnswer1 = newQuestion[1].number
     correctAnswer2 = newQuestion[2].number
     correctImg1 = newQuestion[1].image
     correctImg2 = newQuestion[2].image
-    btn1Answer = ingredients[randomwrong1Index].number
-    btn2Answer = ingredients[randomwrong2Index].number
-    btn3Answer = ingredients[randomwrong3Index].number
 
-    for (let i = 0; i < 40; i++) {
-        if(btn1Answer == btn2Answer || btn1Answer == btn3Answer 
-            || btn2Answer == btn3Answer || correctAnswer1 == btn1Answer ||
-            correctAnswer1 == btn2Answer || correctAnswer1 == btn3Answer ||
-            correctAnswer2 == btn1Answer || correctAnswer2 == btn2Answer || 
-            correctAnswer2 == btn3Answer){
-            randomwrong1Index = Math.floor(Math.random() * 6);
-            randomwrong2Index = Math.floor(Math.random() * 6);
-            randomwrong3Index = Math.floor(Math.random() * 6);
-            btn1Answer = ingredients[randomwrong1Index].number
-            btn2Answer = ingredients[randomwrong2Index].number
-            btn3Answer = ingredients[randomwrong3Index].number
-        }
-    }
+    for (let i = 0; i < 6; i ++){
+        let currentClass = "btn" + (i + 1)
 
-    ans1.innerHTML = `<img class="options" src="${ingredients[randomwrong1Index].image}">`
-    ans2.innerHTML = `<img class="options" src="${ingredients[randomwrong2Index].image}">`
-    ans3.innerHTML = `<img class="options" src="${ingredients[randomwrong3Index].image}">`
-
-    btn1Image = selectedIngredients[randomwrong1Index].image
-    btn2Image = selectedIngredients[randomwrong2Index].image
-    btn3Image = selectedIngredients[randomwrong3Index].image
-    
-    overwrite = 0;
-
-    for(let i = 1; i < 3; i++){
-        let correctAnswerIndex = Math.floor(Math.random() * 3)+1;
-        
-        for (let j = 0; j < 10; j++) {
-            if(overwrite == correctAnswerIndex){
-                correctAnswerIndex = Math.floor(Math.random() * 3)+1;
-            }
-        }
-        let correctAnswer = newQuestion[i].number
-        let correctAnswerId = "btn" + correctAnswerIndex;
-        document.getElementById(correctAnswerId).innerHTML = `<img class="options" src="${newQuestion[i].image}"/>`
-
-        if(correctAnswerIndex == 1){
-            overwrite = 1;
-            btn1Answer = newQuestion[i].number
-            for (let c = 0; c < 6; c++) {
-                checkImage = c + 1
-                if(correctAnswer == checkImage){
-                    btn1Image = selectedIngredients[c].image
-                }
-            }
-        }
-        if(correctAnswerIndex == 2){
-            overwrite = 2;
-            btn2Answer = newQuestion[i].number
-            for (let c = 0; c < 6; c++) {
-                checkImage = c + 1
-                if(correctAnswer == checkImage){
-                    btn2Image = selectedIngredients[c].image
-                }
-            }
-        }
-        if(correctAnswerIndex == 3){
-            overwrite = 3;
-            btn3Answer = newQuestion[i].number
-            for (let c = 0; c < 6; c++) {
-                checkImage = c + 1
-                if(correctAnswer == checkImage){
-                    btn3Image = selectedIngredients[c].image
-                }
-            }
-        }  
-        
+        let currentBtn = document.getElementById(currentClass)
+        currentBtn.style.border = "transparent"
     }
 }
 
