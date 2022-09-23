@@ -38,10 +38,6 @@ let choice2;
 
 let overwrite;
 
-window.addEventListener('dblclick', function(event) {
-    event.preventDefault();
-    }, { passive: false });
-    
 startButton.addEventListener("click", () => {
     start.classList.add("hide")
     game.classList.remove("hide")
@@ -95,6 +91,10 @@ let Q5 = [
     {number: "5",image:"./img/ice.png"}
 ]
 
+window.addEventListener('dblclick', function(event) {
+    event.preventDefault();
+    }, { passive: false });
+    
 input()
 
 function input(){

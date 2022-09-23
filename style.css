@@ -321,6 +321,7 @@ button.submit, button.playAgain, button.nextZone{
 .final .end{
     display: flex;
     margin: 0 auto;
+    margin-top: 60px;
     max-width: 60%;
 }
 
@@ -376,6 +377,7 @@ button{
     }
     .final .end{
         max-width: 450px;
+        margin-top: 100px;
     }
     .right{
         width: 100%;
@@ -395,7 +397,7 @@ button{
         margin: 0 auto;
     }
     .startbtn,button.submit, button.playAgain, button.nextZone{
-        max-width: 200px;
+        max-width: 250px;
     }
     .cover-bottom{
         margin-top: 15px;
@@ -406,14 +408,16 @@ button{
     .answer-q{
         display: grid;
         flex-direction: row;
-        max-width: 300px;
+        max-width: 280px;
+        gap: 5px;
         margin: 0 auto;
     }
     .in{
         width: 25%;
     }
     .final .end{
-        max-width: 360px;
+        max-width: 250px;
+        margin-top: 10px;
     }
     .next{
         max-width: 250px;
